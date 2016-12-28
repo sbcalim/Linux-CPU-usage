@@ -121,6 +121,12 @@ main ( int argc, char *argv[] )
 			printf("%.2lf\t", get_cpu_percentage(n_cpu_array[i], p_cpu_array[i]));
 		}
 		printf("\n");
+		
+		for(i = 0; i < num_of_cpus; i++)
+		{
+			free(p_cpu_array[i]);
+			free(n_cpu_array[i]);
+		}
 	}
 	
 	return EXIT_SUCCESS;
